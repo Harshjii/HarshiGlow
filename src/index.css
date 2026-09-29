@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --color-primary: #622d5b;
+  --color-primary-dark: #4c2046;
+  --color-accent: #eeddc9;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Elegant Arch Shapes for Responsive Displays */
+.arch-hero {
+  border-radius: 140px 140px 24px 140px;
+}
+@media (min-width: 640px) {
+  .arch-hero {
+    border-radius: 180px 180px 30px 180px;
+  }
+}
+
+.arch-card {
+  border-radius: 28px;
+}
+@media (min-width: 640px) {
+  .arch-card {
+    border-radius: 36px 36px 24px 24px;
+  }
+}
+
+/* Input zoom prevention on iOS (forces >=16px font-size on mobile) */
+@media (max-width: 640px) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fcfaf7;
+}
+::-webkit-scrollbar-thumb {
+  background: #622d5b40;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #622d5b80;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+}
+
+.pulse-whatsapp {
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
